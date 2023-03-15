@@ -34,7 +34,6 @@ def caesar(text,shift,direction):
                 new_letter = alphabet[new_position]
                 end_text +=new_letter
             elif direction != "encode" and direction !="decode":
-                end_of_game = True
                 print("error, try again")
         else:
             end_text +=letter
