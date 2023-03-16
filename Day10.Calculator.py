@@ -18,22 +18,27 @@ operations = {
     "/": divide,
 }
 num1 =int(input("What is the first number:"))
-num2=int(input("What is the second number:"))
-
 for symbol in operations:
     print(symbol)
+stop_loop = False
+while not stop_loop:
+    operation_symbol = input("pick an operation from the above symbols")
+    num2=int(input("What is the next number:"))
+    # if operation_symbol == "+":
+    #     add(num1,num2)
+    # elif operation_symbol == "-":
+    #     subtract(num1,num2)
+    # elif operation_symbol == "*":
+    #     multiply(num1,num2)
+    # elif operation_symbol == "/":
+    #     divide(num1,num2)
 
-operation_symbol = input("pick an operation from the above symbols")
-# if operation_symbol == "+":
-#     add(num1,num2)
-# elif operation_symbol == "-":
-#     subtract(num1,num2)
-# elif operation_symbol == "*":
-#     multiply(num1,num2)
-# elif operation_symbol == "/":
-#     divide(num1,num2)
+    called_operation = operations[operation_symbol]
+    hereby =called_operation(num1,num2)
 
-called_operation = operations[operation_symbol]
-hereby =called_operation(num1,num2)
-
-print(f"{num1}{operation_symbol}{num2}={hereby}")
+    print(f"{num1}{operation_symbol}{num2}={hereby}")
+    should_continue =input(f"Do you wish to continue with {hereby}, type yes or no").lower()
+    if should_continue =="no":
+         stop_loop = True
+    elif should_continue =="yes":
+            num1 = hereby
