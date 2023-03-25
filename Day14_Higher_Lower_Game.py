@@ -53,10 +53,12 @@ def compare(selection,item1,item2):
 def play_game():
     print(logo)
     item1 = random.choice(data)
+    item2 = random.choice(data)
+
     game_over = False
     while not game_over:
+        item1 = item2
         item2 = random.choice(data)
-
         presentation1(item1)
         print(vs)
         presentation2(item2)
