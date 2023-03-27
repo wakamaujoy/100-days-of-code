@@ -1,6 +1,6 @@
 from data import MENU, resources
-
-def choice_made(choice):
+profit = 0
+def pesa(choice):
     if choice == "espresso":
        return MENU["espresso"]["cost"]
     elif choice == "latte":
@@ -13,19 +13,35 @@ def money(quarters,dimes,nickels,pennies):
     return money_put
 
 
-def manage_resources():
+def manage_resources(choice):
+    if choice =="espresso":
+        rem_water = resources["water"] - MENU["espresso"]["ingredients"]["water"]
+        rem_coffee = resources["coffee"] - - MENU["espresso"]["ingredients"]["coffee"]
+        return f"water:{rem_water}ml\ncoffe:{rem_coffee}g"
+    for item in MENU["espresso"]["ingredients"]:
+        print(MENU["espresso"]["ingredients"])
+
+
+
+
 
 def order_coffee():
+    global profit
     game_over = False
     while not game_over:
         choice = input("What would you like?(espresso/latte/cappuccino):").lower()
-        if choice == "report":
+        if choice == "off":
             game_over = True
-            manage_resources()
+        elif choice =="report":
+            print(f"water:{resources['water']}ml")
+            print(f"milk:{resources['milk']}ml")
+            print(f"coffee:{resources['coffee']}g")
+            print({profit})
 
         else:
-            choice_made(choice)
-        price = choice_made(choice)
+            pesa(choice)
+
+        price = pesa(choice)
         print(f"placed order is $: {price}")
         print("Please insert coins.")
         quarters = int(input("How many quarters?:"))
@@ -42,6 +58,7 @@ def order_coffee():
             game_over = True
         else:
             print(f"Here is {change} in change, enjoy your {choice}☕️!")
+
 
 
 order_coffee()
