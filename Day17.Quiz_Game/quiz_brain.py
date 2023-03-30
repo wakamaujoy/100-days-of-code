@@ -16,6 +16,7 @@ class QuizBrain:
         self.question_number += 1
         choice = input(f"q.{self.question_number}:{current_question.text}(TRUE/FALSE): ")
         self.check_answer(choice, current_question.answer)
+        self.final_score() 
 
     def check_answer(self, choice, correct_answer):
         if choice.lower() == correct_answer.lower():
@@ -23,5 +24,11 @@ class QuizBrain:
             print(f"Correct, your points{self.score}/{self.question_number}")
         else:
             print("Wrong")
+
+    def final_score(self):
+        if self.question_number == len(self.question_list):
+            print(f"You have completed the game, your total score is{self.score}/{self.question_number} ")
+
+
 
 
