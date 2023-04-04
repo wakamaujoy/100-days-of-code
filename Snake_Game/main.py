@@ -1,6 +1,7 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 from snake import Snake
 from food import Food
+from scoreboard import Scoreboard
 import time
 
 screen = Screen()
@@ -24,11 +25,10 @@ screen.bgcolor("black")
 # timmy3.goto(-40, 0)
 
 snake = Snake()
+food = Food()
+score = Scoreboard()
 
 snake.create_snake()
-food = Food()
-
-
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
@@ -40,6 +40,10 @@ while is_on:
     screen.update()
     time.sleep(0.1)
     snake.move()
+    if snake.segments[0].distance(food) < 12:
+        food.refresh()
+        score.add_score()
+
 
 
 screen.exitonclick()

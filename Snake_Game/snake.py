@@ -5,13 +5,14 @@ UP = 90
 DOWN = 270
 LEFT = 180
 RIGHT = 0
+
+
 class Snake:
     def __init__(self):
         self.segments = []
         self.create_snake()
 
     def create_snake(self):
-
         for segment in DIRECTIONS:
             new_segment = Turtle()
             new_segment.color("white")
