@@ -48,8 +48,7 @@ tim.penup()
 tim.setheading(225)
 tim.forward(280)
 
-no_of_steps = 20
-for route in range(1, no_of_steps + 1):
+for route in range(21):
     tim.setheading(0)
     move()
     tim.setheading(90)
