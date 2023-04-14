@@ -27,8 +27,9 @@ screen.bgcolor("black")
 snake = Snake()
 food = Food()
 score = Scoreboard()
-
+screen.tracer(0)
 snake.create_snake()
+
 
 screen.listen()
 screen.onkey(snake.up, "Up")
@@ -40,7 +41,6 @@ is_on = True
 while is_on:
     screen.update()
     time.sleep(0.1)
-    snake.speed("fastest")
     snake.move()
 
 
@@ -51,18 +51,16 @@ while is_on:
         snake.add_seg()
 
     # Detection with wall
-    if snake.segments[0].xcor() > 280 or snake.segments[0].xcor() < -280 or snake.segments[0].ycor() > 280 or \
-            snake.segments[0].xcor() < -280:
-        is_on = False
-        score.game_over()
-        print("Game Over")
+    if snake.segments[0].xcor() > 280 or snake.segments[0].xcor() < -280 or snake.segments[0].ycor() > 280 or snake.segments[0].xcor() < -280:
+        score.reset()
+        snake.snake_reset()
 
-    # Detection with tail
+        # Detection with tail
     for segments in snake.segments:
         if segments == snake.segments[0]:
             pass
         elif snake.segments[0].distance(segments) < 10:
-            is_on = False
-            score.game_over()
+            score.reset()
+            snake.snake_reset()
 
 screen.exitonclick()
