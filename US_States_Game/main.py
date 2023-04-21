@@ -22,11 +22,15 @@ correct_guesses = []
 missing_states = []
 points = 0
 def read_more():
-    for state in state_data.state:
-        if state not in correct_guesses:
-            missing_states.append(state)
+    with open(state_data.state) as state_names:
+        state_lists = state_names.readlines()
+        missing_states = [state for state in state_lists if state not in correct_guesses]
         new_data = pandas.DataFrame(missing_states)
         new_data.to_csv("states_to_learn.csv")
+
+        # for state in state_data.state:
+        # if state not in correct_guesses:
+        #     missing_states.append(state)
 
 
 is_game_on = True
