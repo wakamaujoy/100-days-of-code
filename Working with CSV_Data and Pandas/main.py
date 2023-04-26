@@ -59,7 +59,7 @@ import pandas
 
 
 squirrel_data = pandas.read_csv("Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
-gray_squirrels = squirrel_data[squirrel_data["Primary Fur Color"] == "Gray"]
+
 gray_squirrels_length = len(squirrel_data[squirrel_data["Primary Fur Color"] == "Gray"])
 cinnamon_squirrels_length = len(squirrel_data[squirrel_data["Primary Fur Color"] == "Cinnamon"])
 black_squirrels_length = len(squirrel_data[squirrel_data["Primary Fur Color"] == "Black"])
