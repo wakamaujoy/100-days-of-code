@@ -15,7 +15,7 @@ my_button = Button(text="Click here", command=clicked)
 my_button.pack()
 
 
-input = Entry(textvariable="hi")
+input = Entry()
 input.pack()
 window.mainloop()
 
