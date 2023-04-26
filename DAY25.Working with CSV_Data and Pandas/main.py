@@ -71,9 +71,9 @@ print(black_squirrels_length)
 
 squirrel_data_dict = {
     "squirrel_color": ["gray", "cinnamon", "black"],
-    "squirrels_number":[gray_squirrels_length,cinnamon_squirrels_length,black_squirrels_length]
+    "squirrels_number": [gray_squirrels_length,cinnamon_squirrels_length,black_squirrels_length]
 }
-# TO A DATAFRAM
+# TO A DATAFRAME
 squirrel_data_dataframe = pandas.DataFrame(squirrel_data_dict)
 print(squirrel_data_dataframe)
 
