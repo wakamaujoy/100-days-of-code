@@ -8,7 +8,7 @@ YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
-LONG_BREAK_MIN = 25
+LONG_BREAK_MIN = 30
 reps = 0
 my_timer =None
 
@@ -63,6 +63,9 @@ def count_down(count):
         for _ in range(math.floor(reps/2)):
             marks += "✔"
         checkbox_label.config(text=marks)
+
+
+
 
 
 
