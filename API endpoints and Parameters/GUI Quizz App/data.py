@@ -103,18 +103,7 @@
 
 import requests
 
-response = requests.get(url="https://opentdb.com/api.php?amount=10&type=boolean")
+response = requests.get(url="https://opentdb.com/api.php?amount=20&type=boolean&category=18")
 my_data = response.json()
 
-print(my_data)
-question = my_data["results"][2]["question"]
-print(question)
-answer= my_data["results"][2]["correct_answer"]
-print(answer)
-
-# my_new_data = {for question, answer in my_data}
-question_data = [{
-    "question":question,
-    "correct_answer":answer}
-]
-print(question_data)
+question_data = my_data["results"]
