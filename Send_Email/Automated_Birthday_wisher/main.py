@@ -1,6 +1,6 @@
 ##################### Normal Starting Project ######################
-my_email = "userjoycee@gmail.com"
-my_password ="wetkpklfvpwmagcd"
+my_email = "*****************"
+my_password ="****************"
 
 # 1. Update the birthdays.csv with your friends & family's details. 
 # HINT: Make sure one of the entries matches today's date for testing purposes. e.g.
